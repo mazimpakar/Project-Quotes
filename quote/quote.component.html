@@ -2,7 +2,7 @@
    
   <ul>
         <div *ngFor='let quote of quotes;let i = index'>
-            <li >{{quote.name}}</li>
+                <li  id ="{{i}}" appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</li>
             <button  (click)='toogleDetails(i)'>Toogle Details</button>
     
             <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'completeQuote($event,i)'></app-quote-details>
@@ -13,6 +13,10 @@
 
 
   <p *ngIf='quotes.length > 3'>You have too many quotes</p>
+
+
+  
+  
 
 
   
