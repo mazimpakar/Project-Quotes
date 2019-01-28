@@ -1,14 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  h1>My Goals</h1>
+  <h1>My Quotes</h1>
 <hr>
 
-<ul>
-  <li *ngFor='let goal of goals'>{{quote.name}}</li>
-</ul>
 
-
-  <img width="300" alt="Angular Logo" src="data:image/quotes.png">
+  <img width="300" alt="Quotes Logo" src="data:image/quotes.png">
 </div>
 
 <!-- <ul>
@@ -23,5 +19,10 @@
   </li>
 </ul> -->
 <h2>Favorite quotes: </h2>
+<ul>
+  <li *ngFor='let quote of quotes'>{{quote.name}}</li>
+</ul>
+
+
 
 <router-outlet></router-outlet>
