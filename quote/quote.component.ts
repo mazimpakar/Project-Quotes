@@ -41,10 +41,10 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote);
   }
 
-  // @Input() quote:Quote;
-  // @Output() isComplete= new EventEmitter<boolean>();
+  @Input() quote: Quote;
+  @Output() isComplete = new EventEmitter<boolean>();
 
-  // constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 }
