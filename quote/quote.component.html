@@ -1,17 +1,20 @@
 <h1>My Quotes</h1>
 <div class="container">
-  <div class="row" *ngFor="let quote of quotes; let i = index"></div>
+  <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+  <li *ngFor="let quote of quotes">{{ quote.name }}</li>
   <div class="row">
-    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-    <h4 id="{{ i }}" appStrikethrough>
-      {{ quote.name }} due on {{ quote.completeDate | date | uppercase }}
-    </h4>
-    <!-- <button class="btn btn danger"  (click)='toogleDetails(i)'>Toogle Details</button> -->
+    <h4 id="{{ i }}" appStrikethrough></h4>
+    {{ quote.completeDate | date | uppercase }}
+    <button class="btn btn danger" (click)="toogleDetails(i)">
+      Toogle Details
+    </button>
   </div>
-  <div class="row" *ngIf="quote.showDescription">
-    <app-quote-details
-      [quote]="Quote"
-      (isComplete)="deleteQuote($event, i)"
-    ></app-quote-details>
-  </div>
+
+  <!-- <div class="row" *ngIf="quote.showDescription"> -->
+  <app-quote-details
+    [quote]="Quote"
+    (isComplete)="deleteQuote($event, i)"
+  ></app-quote-details>
+  <!-- </div> -->
 </div>
+<!-- ; let i = index" -->
