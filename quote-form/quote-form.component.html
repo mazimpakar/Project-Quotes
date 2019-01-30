@@ -7,7 +7,8 @@
           type="text"
           class="form-control"
           id="name"
-          [(ngModel)]="newQuoteName"
+          [(ngModel)]="newQuote.name"
+          name="name"
         />
       </div>
       <div class="form-group">
@@ -17,7 +18,8 @@
           name="quote"
           class="form-control"
           d="exempleFormControlInput1"
-          [(ngModel)]="newQuoteDescription"
+          [(ngModel)]="newQuote.description"
+          name="description"
         />
       </div>
       <div class="form-group">
@@ -27,7 +29,8 @@
           name="author"
           class="form-control"
           id="exempleFormControlInput1"
-          [(ngModel)]="newQuoteAuthor"
+          [(ngModel)]="newQuote.author"
+          name="author"
         />
       </div>
       <button type="submit" class="btn btn-primary btn-lg">Add Quote</button>

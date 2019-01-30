@@ -9,25 +9,43 @@ import { Quote } from "../quote";
 export class QuoteComponent implements OnInit {
   quotes = [
     new Quote(
+      1,
       "Kalia",
       "When you reach the end of your hope,tie a knot in it hang on",
-      "Find an online",
+      "",
+
       new Date(2018, 12, 31)
     ),
     new Quote(
+      2,
       "Mugabo",
       "there is nothing permanent excpt change",
-      "it is true",
+      "",
+
       new Date(2018, 11, 15)
     ),
     new Quote(
+      3,
       "Mutwe",
       "life what happens when you are busy making other plans",
-      "check internet",
+      "",
+
       new Date(2018, 10, 2)
     )
   ];
-
+  toogleDetails(index) {
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      let toDelete = confirm(
+        `Are you sure you want to delete ${this.quotes[index].name}`
+      );
+      if (toDelete) {
+        this.quotes.splice(index, 1);
+      }
+    }
+  }
   addNewQuote(quote) {
     let quoteLength = this.quotes.length;
     quote.id = quoteLength + 1;
